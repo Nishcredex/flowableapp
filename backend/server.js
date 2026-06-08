@@ -12,6 +12,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.static("public"));
 
+// const FLOWABLE_BASE = process.env.FLOWABLE_BASE || "http://localhost:8080/flowable-ui/process-api";
 const FLOWABLE_BASE = process.env.FLOWABLE_BASE || "http://localhost:8080/flowable-ui/process-api";
 const FLOWABLE_AUTH = "Basic " + Buffer.from("admin:test").toString("base64");
 
