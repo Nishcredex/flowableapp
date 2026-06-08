@@ -7,7 +7,9 @@
 // ============================================================
 
 // const FLOWABLE_BASE = 'http://localhost:8080/flowable-ui/process-api';
-const FLOWABLE_BASE = 'http://localhost:3000/flowable-api';
+const FLOWABLE_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/flowable-api`
+  : 'http://localhost:3000/flowable-api';
 const CREDENTIALS   = btoa('admin:test'); // base64 of "admin:test"
 
 const HEADERS = {
