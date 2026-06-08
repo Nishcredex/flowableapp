@@ -32,14 +32,16 @@ import {
 // CONFIG
 // ─────────────────────────────────────────────────────────────
 
-const FLOWABLE_BASE   = 'http://localhost:3000/flowable-api';
+// const FLOWABLE_BASE   = 'http://localhost:3000/flowable-api';
 const CREDENTIALS     = btoa('admin:test');
 const AUTH_HEADER     = `Basic ${CREDENTIALS}`;
 
-const FLOWABLE_UI_URL = 'http://localhost:8080/flowable-ui/modeler';
+// const FLOWABLE_UI_URL = 'http://localhost:8080/flowable-ui/modeler';
 const PROCESS_KEY     = 'auditManagementWorkflow';
 const PAGE_SIZE       = 5; // audits shown per page
 
+const FLOWABLE_BASE   = (import.meta.env.VITE_API_URL || 'http://localhost:3000') + '/flowable-api';
+const FLOWABLE_UI_URL = 'https://flowable-ui-production.up.railway.app/flowable-ui/modeler';
 // ─────────────────────────────────────────────────────────────
 // TYPES
 // ─────────────────────────────────────────────────────────────
