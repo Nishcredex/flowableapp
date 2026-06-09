@@ -1048,6 +1048,27 @@ export async function saveOrgSettings(payload: OrgSettingsPayload): Promise<void
     await createOrgSettings(payload);
   }
 }
+
+export interface ProcessDefinition {
+  id:      string;
+  key:     string;
+  name:    string;
+  version: number;
+}
+
+export async function getAllProcessDefinitions(): Promise<ProcessDefinition[]> {
+  const data = await flowableFetch<{ data: ProcessDefinition[] }>(
+    '/repository/process-definitions?size=100&sort=name'
+  );
+  // Return only the latest version of each unique key
+  const latest: Record<string, ProcessDefinition> = {};
+  for (const def of data.data || []) {
+    if (!latest[def.key] || def.version > latest[def.key].version) {
+      latest[def.key] = def;
+    }
+  }
+  return Object.values(latest);
+}
 // // ============================================================
 // //  flowableApi.ts
 // //  Central service for all Flowable REST API calls
