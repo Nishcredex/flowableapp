@@ -22,6 +22,7 @@ import {
   ActivityIcon,
   CheckCircle2Icon,
   ClockIcon,
+  ChevronDownIcon,
 } from 'lucide-react';
 import {
   getAllProcessInstances,
