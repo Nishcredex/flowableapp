@@ -42,7 +42,7 @@ const PROCESS_KEY     = 'auditManagementWorkflow';
 const PAGE_SIZE       = 5; // audits shown per page
 
 const FLOWABLE_BASE   = (import.meta.env.VITE_API_URL || 'http://localhost:3000') + '/flowable-api';
-const FLOWABLE_UI_URL = 'https://flowable-ui-production.up.railway.app/flowable-ui/modeler';
+const FLOWABLE_UI_URL = 'https://flowable-ui-719136210327.asia-south1.run.app/flowable-ui/modeler';
 // ─────────────────────────────────────────────────────────────
 // TYPES
 // ─────────────────────────────────────────────────────────────
